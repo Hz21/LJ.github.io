@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>食品从业人员健康合格证明</title>
+  <style>
+    body {
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: "Microsoft Yahei", sans-serif;
+    }
+
+    .card {
+      width: 400px;
+      height: 550px;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .header {
+      height: 100px;
+      background-color: #2e7d32;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .header h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .photo-container {
+      margin-left: auto;
+      width: 80px;
+      height: 80px;
+      border: 1px solid #fff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .photo-img {
+      width: 100%;
+      height: 120%;
+      object-fit: cover; /* 保持图片比例并填充容器 */
+    }
+
+    .stamp {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80px;
+      height: 80px;
+      border: 2px solid #f44336;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #f44336;
+      font-size: 10px;
+      background-color: rgba(0, 0, 0, 0.2); /* 半透明背景让文字更清晰 */
+    }
+
+    .stamp::before {
+      content: "★";
+      font-size: 20px;
+      color: #f44336;
+    }
+
+    .info {
+      padding: 20px;
+    }
+
+    .info h3 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    .info p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .qr-code {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .qr {
+      width: 120px;
+      height: 120px;
+      background-color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="header">
+      <h2>食品从业人员<br>健康合格证明</h2>
+      <div class="photo-container">
+        <!-- 使用img标签展示图片 -->
+        <img src="https://uy.wzznft.com/i/2025/09/07/u5k5yg.jpg
+" alt="持证人照片" class="photo-img">
+        <div class="stamp">从业健康</div>
+      </div>
+    </div>
+    <div class="info">
+      <h3>李天乐</h3>
+      <p>类型： 食品</p>
+      <p>性别： 男</p>
+      <p>证件效期：2026年09月01日</p>
+      <p>证件编号：793324700</p>
+      <p>体检机构：食品</p>
+    </div>
+    <div class="qr-code">
+      <div class="qr"></div>
+    </div>
+  </div>
+</body>
+
+</html>

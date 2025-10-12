@@ -118,7 +118,7 @@
         <div class="text-center mt-10 pt-6 border-t-2 border-gray-300">
             <p class="text-gray-600 mb-4">扫描二维码验证本证明真伪</p>
             <div class="inline-block p-2 border border-gray-300 bg-white shadow-sm">
-                <img id="autoJumpQrcode" alt="扫描跳转验证页面" class="w-36 h-36">
+                <img id="autoJumpQrcode" alt="扫描跳转验证页面" class="w-48 h-48">
             </div>
             <p class="text-sm text-gray-500 mt-3">注：本证明为电子凭证，与纸质证明具有同等效力</p>
         </div>
@@ -131,13 +131,14 @@
     </div>
 
     <script>
-        // 生成当前页面URL的二维码
+        // 生成当前页面URL的二维码，尺寸调整为200x200
         const currentPageUrl = window.location.href;
-        const qrcodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(currentPageUrl)}`;
+        const qrcodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(currentPageUrl)}`;
         document.getElementById('autoJumpQrcode').src = qrcodeUrl;
     </script>
 </body>
 </html>
+
 
 
 

@@ -11,14 +11,11 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#0052cc',
-                        secondary: '#d92121',
-                        neutral: '#333333',
-                        light: '#f5f5f5',
+                        primary: '#0066b2',
+                        secondary: '#c8102e',
                     },
                     fontFamily: {
                         sans: ['"Noto Sans SC"', '"Microsoft YaHei"', 'sans-serif'],
-                        serif: ['"Noto Serif SC"', 'serif'],
                     },
                 }
             }
@@ -26,118 +23,97 @@
     </script>
     <style type="text/tailwindcss">
         @layer utilities {
-            .text-shadow {
-                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            .cert-border {
+                border: 1px solid #d1d5db;
             }
-            .border-dashed-thick {
-                border-width: 2px;
-                border-style: dashed;
-            }
-            .certificate-container {
-                max-width: 800px;
-                margin: 0 auto;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            }
-            .info-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 1rem;
-            }
-            @media (max-width: 640px) {
-                .info-grid {
-                    grid-template-columns: 1fr;
-                }
+            .info-item {
+                margin-bottom: 0.3rem;
             }
         }
     </style>
 </head>
-<body class="bg-gray-100 py-8 px-4 font-sans text-neutral">
-    <div class="certificate-container bg-white p-6 md:p-10 rounded-lg">
-        <!-- 标题区域 -->
-        <div class="text-center mb-8 pb-4 border-b-2 border-gray-300">
-            <h1 class="text-[clamp(1.8rem,5vw,2.5rem)] font-bold text-primary mb-2 text-shadow">从业人员预防性健康检查合格证明</h1>
-            <p class="text-lg md:text-xl text-gray-600">南京卫生健康委员会监制</p>
+<body class="bg-gray-100 py-5 px-3">
+    <div class="max-w-md md:max-w-lg mx-auto bg-white shadow-md rounded-md overflow-hidden">
+        <!-- 顶部标题栏 -->
+        <div class="bg-primary text-white text-center py-2">
+            <h1 class="text-lg md:text-xl font-bold">从业人员预防性健康检查合格证明</h1>
+            <p class="text-xs md:text-sm opacity-90">南京卫生健康委员会监制</p>
         </div>
         
-        <!-- 信息区域 -->
-        <div class="info-grid mb-8">
-            <div class="flex items-center">
-                <label class="w-24 font-semibold text-gray-700">姓名：</label>
-                <span class="flex-1 border-b border-gray-300 py-1 pl-2">赵克荣</span>
-            </div>
-            <div class="flex items-center">
-                <label class="w-24 font-semibold text-gray-700">性别：</label>
-                <span class="flex-1 border-b border-gray-300 py-1 pl-2">女</span>
-            </div>
-            <div class="flex items-center">
-                <label class="w-24 font-semibold text-gray-700">年龄：</label>
-                <span class="flex-1 border-b border-gray-300 py-1 pl-2">41</span>
-            </div>
-            <div class="flex items-center">
-                <label class="w-24 font-semibold text-gray-700">证件号码：</label>
-                <span class="flex-1 border-b border-gray-300 py-1 pl-2">832779166</span>
-            </div>
-            <div class="flex items-center">
-                <label class="w-24 font-semibold text-gray-700">从业类别：</label>
-                <span class="flex-1 border-b border-gray-300 py-1 pl-2">食品、饮用水、化妆品、公共场所</span>
-            </div>
-            <div class="flex items-center">
-                <label class="w-24 font-semibold text-gray-700">体检机构：</label>
-                <span class="flex-1 border-b border-gray-300 py-1 pl-2">南京疾病预防控制中心</span>
-            </div>
-            <div class="flex items-center">
-                <label class="w-24 font-semibold text-gray-700">发证日期：</label>
-                <span class="flex-1 border-b border-gray-300 py-1 pl-2">2025年09月13日</span>
-            </div>
-            <div class="flex items-center">
-                <label class="w-24 font-semibold text-gray-700">有效期至：</label>
-                <span class="flex-1 border-b border-gray-300 py-1 pl-2">2026年09月13日</span>
-            </div>
-        </div>
-        
-        <!-- 照片和体检结果区域 -->
-        <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-10">
-            <!-- 照片区域 -->
-            <div class="relative w-40 h-56 border-2 border-gray-400">
-                <img src="https://youke1.picui.cn/s1/2025/10/12/68eb61ba21913.jpg" alt="体检人员照片" class="w-full h-full object-cover">
-                <!-- 印章 -->
-                <div class="absolute bottom-0 right-0 w-24 h-24 flex flex-col justify-center items-center text-secondary border-2 border-secondary rounded-full transform rotate-12">
-                    <div class="star text-lg">★</div>
-                    <div class="text-xs font-bold text-center">体检专用章</div>
+        <!-- 主要内容区 -->
+        <div class="p-4 md:p-5">
+            <!-- 信息网格 -->
+            <div class="grid grid-cols-2 gap-x-3 gap-y-1 mb-4">
+                <div class="info-item">
+                    <span class="text-xs md:text-sm font-semibold text-gray-700">姓名：</span>
+                    <span class="text-xs md:text-sm border-b border-gray-200">赵克荣</span>
+                </div>
+                <div class="info-item">
+                    <span class="text-xs md:text-sm font-semibold text-gray-700">性别：</span>
+                    <span class="text-xs md:text-sm border-b border-gray-200">女</span>
+                </div>
+                <div class="info-item">
+                    <span class="text-xs md:text-sm font-semibold text-gray-700">年龄：</span>
+                    <span class="text-xs md:text-sm border-b border-gray-200">41</span>
+                </div>
+                <div class="info-item">
+                    <span class="text-xs md:text-sm font-semibold text-gray-700">证件号：</span>
+                    <span class="text-xs md:text-sm border-b border-gray-200">832779166</span>
+                </div>
+                <div class="info-item col-span-2">
+                    <span class="text-xs md:text-sm font-semibold text-gray-700">从业类别：</span>
+                    <span class="text-xs md:text-sm border-b border-gray-200">食品、饮用水、化妆品、公共场所</span>
+                </div>
+                <div class="info-item">
+                    <span class="text-xs md:text-sm font-semibold text-gray-700">体检机构：</span>
+                    <span class="text-xs md:text-sm border-b border-gray-200">南京疾控中心</span>
+                </div>
+                <div class="info-item">
+                    <span class="text-xs md:text-sm font-semibold text-gray-700">体检日期：</span>
+                    <span class="text-xs md:text-sm border-b border-gray-200">2025.09.13</span>
+                </div>
+                <div class="info-item">
+                    <span class="text-xs md:text-sm font-semibold text-gray-700">有效期至：</span>
+                    <span class="text-xs md:text-sm border-b border-gray-200">2026.09.13</span>
                 </div>
             </div>
             
-            <!-- 体检结果 -->
-            <div class="text-center">
-                <p class="text-xl mb-2">体检结果：</p>
-                <p class="text-4xl font-bold text-green-600">合格</p>
+            <!-- 照片与结果区 -->
+            <div class="flex items-center justify-between mb-4 pt-2">
+                <div class="relative w-28 h-36 cert-border">
+                    <img src="https://youke1.picui.cn/s1/2025/10/12/68eb61ba21913.jpg" alt="持证人照片" class="w-full h-full object-cover">
+                    <div class="absolute -bottom-1 -right-1 text-secondary text-xs transform rotate-12">
+                        <span class="bg-white px-1 border border-secondary">体检专用章</span>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <p class="text-xs text-gray-600">体检结果</p>
+                    <p class="text-2xl font-bold text-green-600">合格</p>
+                </div>
+                
+                <div class="w-24 h-24">
+                    <img id="qrcode" alt="验证二维码" class="w-full h-full">
+                </div>
             </div>
-        </div>
-        
-        <!-- 二维码验证区域 -->
-        <div class="text-center mt-10 pt-6 border-t-2 border-gray-300">
-            <p class="text-gray-600 mb-4">扫描二维码验证本证明真伪</p>
-            <div class="inline-block p-2 border border-gray-300 bg-white shadow-sm">
-                <img id="autoJumpQrcode" alt="扫描跳转验证页面" class="w-48 h-48">
+            
+            <!-- 底部信息 -->
+            <div class="text-center text-xs text-gray-500 pt-2 border-t border-gray-200">
+                <p>本证明与纸质证明具有同等效力</p>
+                <p class="mt-1">咨询：025-12320 | 官网：www.whwjw.gov.cn</p>
             </div>
-            <p class="text-sm text-gray-500 mt-3">注：本证明为电子凭证，与纸质证明具有同等效力</p>
-        </div>
-        
-        <!-- 底部说明 -->
-        <div class="mt-8 text-center text-sm text-gray-500">
-            <p>咨询电话：025-12320</p>
-            <p class="mt-1">官方网站：www.whwjw.gov.cn</p>
         </div>
     </div>
 
     <script>
-        // 生成当前页面URL的二维码，尺寸调整为200x200
+        // 生成二维码
         const currentPageUrl = window.location.href;
-        const qrcodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(currentPageUrl)}`;
-        document.getElementById('autoJumpQrcode').src = qrcodeUrl;
+        const qrcodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=96x96&data=${encodeURIComponent(currentPageUrl)}`;
+        document.getElementById('qrcode').src = qrcodeUrl;
     </script>
 </body>
 </html>
+
 
 
 

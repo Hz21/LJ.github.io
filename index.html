@@ -27,92 +27,95 @@
                 border: 1px solid #d1d5db;
             }
             .info-item {
-                margin-bottom: 0.3rem;
+                margin-bottom: 0.5rem;
+            }
+            .cert-separator {
+                height: 1px;
+                background-color: #e5e7eb;
+                margin: 0.75rem 0;
             }
         }
     </style>
 </head>
-<body class="bg-gray-100 py-5 px-3">
-    <div class="max-w-md md:max-w-lg mx-auto bg-white shadow-md rounded-md overflow-hidden">
+<body class="bg-gray-100 py-6 px-3">
+    <div class="max-w-md md:max-w-lg mx-auto bg-white shadow-lg rounded-md overflow-hidden border border-gray-200">
         <!-- 顶部标题栏 -->
-        <div class="bg-primary text-white text-center py-2">
-            <h1 class="text-lg md:text-xl font-bold">从业人员预防性健康检查合格证明</h1>
-            <p class="text-xs md:text-sm opacity-90">南京卫生健康委员会监制</p>
+        <div class="bg-primary text-white text-center py-3">
+            <h1 class="text-lg md:text-xl font-bold tracking-wide">从业人员预防性健康检查合格证明</h1>
+            <p class="text-xs md:text-sm opacity-90 mt-1">南京卫生健康委员会监制</p>
         </div>
         
         <!-- 主要内容区 -->
-        <div class="p-4 md:p-5">
+        <div class="p-5 md:p-6">
             <!-- 信息网格 -->
-            <div class="grid grid-cols-2 gap-x-3 gap-y-1 mb-4">
-                <div class="info-item">
-                    <span class="text-xs md:text-sm font-semibold text-gray-700">姓名：</span>
-                    <span class="text-xs md:text-sm border-b border-gray-200">施启耀</span>
+            <div class="mb-5">
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2">
+                    <div class="info-item">
+                        <span class="text-sm md:text-base font-semibold text-gray-700">姓名：</span>
+                        <span class="text-sm md:text-base border-b border-gray-200">施启耀</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="text-sm md:text-base font-semibold text-gray-700">性别：</span>
+                        <span class="text-sm md:text-base border-b border-gray-200">男</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="text-sm md:text-base font-semibold text-gray-700">年龄：</span>
+                        <span class="text-sm md:text-base border-b border-gray-200">29</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="text-sm md:text-base font-semibold text-gray-700">证件号：</span>
+                        <span class="text-sm md:text-base border-b border-gray-200">832779167</span>
+                    </div>
                 </div>
-                <div class="info-item">
-                    <span class="text-xs md:text-sm font-semibold text-gray-700">性别：</span>
-                    <span class="text-xs md:text-sm border-b border-gray-200">男</span>
-                </div>
-                <div class="info-item">
-                    <span class="text-xs md:text-sm font-semibold text-gray-700">年龄：</span>
-                    <span class="text-xs md:text-sm border-b border-gray-200">29</span>
-                </div>
-                <div class="info-item">
-                    <span class="text-xs md:text-sm font-semibold text-gray-700">证件号：</span>
-                    <span class="text-xs md:text-sm border-b border-gray-200">832779167</span>
-                </div>
-                <div class="info-item col-span-2">
-                    <span class="text-xs md:text-sm font-semibold text-gray-700">从业类别：</span>
-                    <span class="text-xs md:text-sm border-b border-gray-200">食品、饮用水、化妆品、公共场所</span>
-                </div>
-                <div class="info-item">
-                    <span class="text-xs md:text-sm font-semibold text-gray-700">体检机构：</span>
-                    <span class="text-xs md:text-sm border-b border-gray-200">南京疾控中心</span>
-                </div>
-                <div class="info-item">
-                    <span class="text-xs md:text-sm font-semibold text-gray-700">体检日期：</span>
-                    <span class="text-xs md:text-sm border-b border-gray-200">2025.09.13</span>
-                </div>
-                <div class="info-item">
-                    <span class="text-xs md:text-sm font-semibold text-gray-700">有效期至：</span>
-                    <span class="text-xs md:text-sm border-b border-gray-200">2026.09.13</span>
+                
+                <div class="cert-separator"></div>
+                
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2">
+                    <div class="info-item col-span-2">
+                        <span class="text-sm md:text-base font-semibold text-gray-700">从业类别：</span>
+                        <span class="text-sm md:text-base border-b border-gray-200">食品、饮用水、化妆品、公共场所</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="text-sm md:text-base font-semibold text-gray-700">体检机构：</span>
+                        <span class="text-sm md:text-base border-b border-gray-200">南京疾控中心</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="text-sm md:text-base font-semibold text-gray-700">体检日期：</span>
+                        <span class="text-sm md:text-base border-b border-gray-200">2025.09.13</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="text-sm md:text-base font-semibold text-gray-700">有效期至：</span>
+                        <span class="text-sm md:text-base border-b border-gray-200">2026.09.13</span>
+                    </div>
                 </div>
             </div>
             
             <!-- 照片与结果区 -->
-            <div class="flex items-center justify-between mb-4 pt-2">
-                <div class="relative w-28 h-36 cert-border">
+            <div class="flex items-center justify-between py-2 border-t border-b border-gray-200">
+                <div class="relative w-32 h-40 cert-border">
                     <img src="https://s21.ax1x.com/2025/10/14/pVqPssJ.jpg" alt="持证人照片" class="w-full h-full object-cover">
                     <div class="absolute -bottom-1 -right-1 text-secondary text-xs transform rotate-12">
                         <span class="bg-white px-1 border border-secondary">体检专用章</span>
                     </div>
                 </div>
                 
-                <div class="text-center">
-                    <p class="text-xs text-gray-600">体检结果</p>
-                    <p class="text-2xl font-bold text-green-600">合格</p>
-                </div>
-                
-                <div class="w-24 h-24">
-                    <img id="qrcode" alt="验证二维码" class="w-full h-full">
+                <div class="text-center flex-1 mx-6">
+                    <p class="text-sm text-gray-600">体检结果</p>
+                    <p class="text-3xl font-bold text-green-600 mt-1">合格</p>
+                    <p class="text-xs text-gray-500 mt-3">本证明表明持证人符合从业健康要求</p>
                 </div>
             </div>
             
             <!-- 底部信息 -->
-            <div class="text-center text-xs text-gray-500 pt-2 border-t border-gray-200">
-                <p>本证明与纸质证明具有同等效力</p>
-                <p class="mt-1">咨询：025-12320 | 官网：www.whwjw.gov.cn</p>
+            <div class="text-center text-xs text-gray-500 pt-4 mt-2">
+                <p class="mb-1">本证明与纸质证明具有同等效力，可通过官方渠道验证真伪</p>
+                <p>咨询电话：025-12320 | 官方网站：www.whwjw.gov.cn</p>
             </div>
         </div>
     </div>
-
-    <script>
-        // 生成二维码
-        const currentPageUrl = window.location.href;
-        const qrcodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=96x96&data=${encodeURIComponent(currentPageUrl)}`;
-        document.getElementById('qrcode').src = qrcodeUrl;
-    </script>
 </body>
 </html>
+
 
 
 

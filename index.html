@@ -5,295 +5,205 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>从业人员预防性健康检查合格证明</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#0066b2',
-                        secondary: '#c8102e',
+                        primary: '#0e5fa8',
+                        primaryDeep: '#083d70',
+                        accent: '#c8102e',
+                        gold: '#d4a017',
                     },
                     fontFamily: {
                         sans: ['"Noto Sans SC"', '"Microsoft YaHei"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        card: '0 10px 30px rgba(8, 61, 112, 0.12)',
+                        inner: 'inset 0 0 0 1px rgba(255,255,255,0.35)',
                     },
                 }
             }
         }
     </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .cert-border {
-                border: 1px solid #d1d5db;
-            }
-            .info-item {
-                margin-bottom: 0.5rem;
-            }
-            .cert-separator {
-                height: 1px;
-                background-color: #e5e7eb;
-                margin: 0.75rem 0;
-            }
+    <style>
+        body {
+            background:
+                radial-gradient(1200px 600px at 50% -10%, #dbeafe 0%, transparent 60%),
+                linear-gradient(160deg, #eef4fa 0%, #e3ecf5 100%);
+        }
+        .certificate {
+            position: relative;
+            border-radius: 18px;
+        }
+        /* 双线描边框 */
+        .certificate::before {
+            content: '';
+            position: absolute;
+            inset: 10px;
+            border: 1px solid rgba(14, 95, 168, 0.28);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+        /* 背景水印 */
+        .watermark {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5.5rem;
+            font-weight: 800;
+            letter-spacing: 0.35em;
+            color: rgba(14, 95, 168, 0.045);
+            transform: rotate(-18deg);
+            pointer-events: none;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .info-row {
+            display: flex;
+            align-items: baseline;
+            padding: 7px 0;
+            border-bottom: 1px dashed rgba(14, 95, 168, 0.18);
+        }
+        .info-row:last-child { border-bottom: none; }
+        .info-label {
+            flex: 0 0 6.2rem;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        .info-value {
+            flex: 1;
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 0.98rem;
+        }
+        /* 圆形钢印章 */
+        .stamp {
+            position: absolute;
+            right: -6px;
+            bottom: -10px;
+            width: 108px;
+            height: 108px;
+            border: 3px solid rgba(200, 16, 46, 0.75);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: rgba(200, 16, 46, 0.8);
+            transform: rotate(-14deg);
+            mix-blend-mode: multiply;
+            box-shadow: 0 0 0 2px rgba(200,16,46,0.15) inset;
+        }
+        .stamp::after {
+            content: '';
+            position: absolute;
+            inset: 5px;
+            border: 1px dashed rgba(200, 16, 46, 0.5);
+            border-radius: 50%;
+        }
+        .result-badge {
+            background: linear-gradient(135deg, #e6f9ee 0%, #d1f2de 100%);
+            border: 1px solid #86dfae;
+        }
+        @media print {
+            body { background: #fff; }
+            .no-print { display: none; }
         }
     </style>
 </head>
-<body class="bg-gray-100 py-6 px-3">
-    <div class="max-w-md md:max-w-lg mx-auto bg-white shadow-lg rounded-md overflow-hidden border border-gray-200">
+<body class="min-h-screen py-8 px-4 font-sans text-slate-800">
+    <div class="max-w-md md:max-w-2xl mx-auto certificate bg-white shadow-card overflow-hidden">
+
         <!-- 顶部标题栏 -->
-        <div class="bg-primary text-white text-center py-3">
-            <h1 class="text-lg md:text-xl font-bold tracking-wide">从业人员预防性健康检查合格证明</h1>
-            <p class="text-xs md:text-sm opacity-90 mt-1">南京卫生健康委员会监制</p>
-        </div>
-        
+        <header class="relative bg-gradient-to-r from-primaryDeep via-primary to-sky-500 text-white text-center py-6 px-4 shadow-inner">
+            <div class="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-gold via-yellow-300 to-gold"></div>
+            <div class="flex items-center justify-center gap-2 text-xs opacity-90 tracking-widest mb-1">
+                <span class="inline-block w-8 h-px bg-white/50"></span>
+                电子健康证明
+                <span class="inline-block w-8 h-px bg-white/50"></span>
+            </div>
+            <h1 class="text-xl md:text-2xl font-bold tracking-wide">从业人员预防性健康检查合格证明</h1>
+            <p class="text-xs md:text-sm opacity-80 mt-2">南京卫生健康委员会监制</p>
+        </header>
+
         <!-- 主要内容区 -->
-        <div class="p-5 md:p-6">
-            <!-- 信息网格 -->
-            <div class="mb-5">
-                <div class="grid grid-cols-2 gap-x-4 gap-y-2">
-                    <div class="info-item">
-                        <span class="text-sm md:text-base font-semibold text-gray-700">姓名：</span>
-                        <span class="text-sm md:text-base border-b border-gray-200">李天乐</span>
+        <div class="relative p-6 md:p-8">
+            <div class="watermark">合格证明</div>
+
+            <!-- 人员信息 -->
+            <section class="relative">
+                <h2 class="flex items-center gap-2 text-sm font-semibold text-primary mb-3">
+                    <span class="w-1.5 h-4 bg-primary rounded-sm"></span>基本信息
+                </h2>
+                <div class="info-row">
+                    <span class="info-label">姓　　名</span>
+                    <span class="info-value">李天乐</span>
+                    <span class="info-label !flex-none w-16">性　别</span>
+                    <span class="info-value !flex-none w-10">男</span>
+                    <span class="info-label !flex-none w-16">年　龄</span>
+                    <span class="info-value !flex-none w-10">21</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">证 件 号</span>
+                    <span class="info-value tracking-wider">832779191</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">从业类别</span>
+                    <span class="info-value">食品、饮用水、化妆品、公共场所</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">体检机构</span>
+                    <span class="info-value">南京疾病预防控制中心</span>
+                </div>
+            </section>
+
+            <!-- 照片 / 结果 / 二维码 -->
+            <section class="relative flex flex-col md:flex-row items-center gap-6 mt-7 pt-5 border-t border-slate-200">
+
+                <!-- 照片 + 印章 -->
+                <div class="relative shrink-0">
+                    <div class="w-28 h-36 md:w-32 md:h-40 rounded-md overflow-hidden border-2 border-slate-200 shadow-sm">
+                        <img src="https://i.imgs.ovh/2026/11/20/c4255538c1214e27546a72f6579f7292.jpg" alt="持证人照片"
+                             class="w-full h-full object-cover">
                     </div>
-                    <div class="info-item">
-                        <span class="text-sm md:text-base font-semibold text-gray-700">性别：</span>
-                        <span class="text-sm md:text-base border-b border-gray-200">男</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="text-sm md:text-base font-semibold text-gray-700">年龄：</span>
-                        <span class="text-sm md:text-base border-b border-gray-200">21</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="text-sm md:text-base font-semibold text-gray-700">证件号：</span>
-                        <span class="text-sm md:text-base border-b border-gray-200">832779191</span>
+                    <div class="stamp text-center">
+                        <div class="text-base leading-none">★</div>
+                        <div class="text-[11px] font-bold mt-1 leading-tight">体检专用章</div>
                     </div>
                 </div>
-                
-                <div class="cert-separator"></div>
-                
-                <div class="grid grid-cols-2 gap-x-4 gap-y-2">
-                    <div class="info-item col-span-2">
-                        <span class="text-sm md:text-base font-semibold text-gray-700">从业类别：</span>
-                        <span class="text-sm md:text-base border-b border-gray-200">食品、饮用水、化妆品、公共场所</span>
+
+                <!-- 体检结果 -->
+                <div class="result-badge rounded-xl px-6 py-4 text-center min-w-[150px]">
+                    <p class="text-xs text-slate-500 tracking-widest">体 检 结 果</p>
+                    <p class="text-3xl font-bold text-green-600 mt-1">合　格</p>
+                </div>
+
+                <!-- 日期信息 -->
+                <div class="flex-1 w-full space-y-2 text-sm">
+                    <div class="flex justify-between bg-sky-50 rounded-lg px-4 py-2">
+                        <span class="text-slate-500">体检日期</span>
+                        <span class="font-semibold text-primary">2026年11月20日</span>
                     </div>
-                    <div class="info-item">
-                        <span class="text-sm md:text-base font-semibold text-gray-700">体检机构：</span>
-                        <span class="text-sm md:text-base border-b border-gray-200">南京疾控中心</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="text-sm md:text-base font-semibold text-gray-700">体检日期：</span>
-                        <span class="text-sm md:text-base border-b border-gray-200">2026.11.20</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="text-sm md:text-base font-semibold text-gray-700">有效期至：</span>
-                        <span class="text-sm md:text-base border-b border-gray-200">2027.11.20</span>
+                    <div class="flex justify-between bg-sky-50 rounded-lg px-4 py-2">
+                        <span class="text-slate-500">有效期至</span>
+                        <span class="font-semibold text-primary">2027年11月20日</span>
                     </div>
                 </div>
-            </div>
-            
-            <!-- 照片与结果区 -->
-            <div class="flex items-center justify-between py-2 border-t border-b border-gray-200">
-                <div class="relative w-32 h-40 cert-border">
-                    <img src="https://i.imgs.ovh/2026/11/20/c4255538c1214e27546a72f6579f7292.jpg" alt="持证人照片" class="w-full h-full object-cover">
-                    <div class="absolute -bottom-1 -right-1 text-secondary text-xs transform rotate-12">
-                        <span class="bg-white px-1 border border-secondary">体检专用章</span>
-                    </div>
-                </div>
-                
-                <div class="text-center flex-1 mx-6">
-                    <p class="text-sm text-gray-600">体检结果</p>
-                    <p class="text-3xl font-bold text-green-600 mt-1">合格</p>
-                    <p class="text-xs text-gray-500 mt-3">本证明表明持证人符合从业健康要求</p>
-                </div>
-            </div>
-            
+            </section>
+
             <!-- 底部信息 -->
-            <div class="text-center text-xs text-gray-500 pt-4 mt-2">
-                <p class="mb-1">本证明与纸质证明具有同等效力，可通过官方渠道验证真伪</p>
-                <p>咨询电话：025-12320 | 官方网站：www.whwjw.gov.cn</p>
-            </div>
+            <footer class="relative text-center text-xs text-slate-500 pt-5 mt-4 border-t border-slate-100 leading-relaxed">
+                <p>本证明与纸质证明具有同等效力，可通过官方渠道验证真伪</p>
+                <p class="mt-1.5">
+                    咨询电话：<span class="text-primary font-medium">025-12320</span>
+                    <span class="mx-2 text-slate-300">|</span>
+                    官方网站：<span class="text-primary font-medium">www.whwjw.gov.cn</span>
+                </p>
+            </footer>
         </div>
     </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
